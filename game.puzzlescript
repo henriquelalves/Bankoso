@@ -1,0 +1,208 @@
+title Bankoso
+author Illusion Fisherman
+homepage https://illusion-fisherman.itch.io/
+
+========
+OBJECTS
+========
+
+Background
+#525b5c #455b5c #444b5c
+00001
+00011
+00111
+01111
+11111
+
+Target
+#bababa #f0e6f0
+.....
+..0..
+.010.
+..0..
+.....
+
+Wall
+BLACK #630000 #d61718
+00000
+22202
+11101
+00000
+10111
+
+Player
+#d61718 #ef6062 #001eef #e0e0e0
+..00.
+.033.
+.232.
+.222.
+.2.2.
+
+Crate
+#b69318 #836000 #411f00
+12221
+21002
+20102
+20012
+12221
+
+Hole
+BLACK
+.....
+...0.
+..0..
+.0...
+.....
+
+OpenedHole
+BLACK
+.0.0.
+00000
+.000.
+.0000
+0.0..
+
+TempHole
+BLACK
+.....
+.....
+.....
+.....
+.....
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+P = Player
+* = Crate
+@ = Crate and Target
+O = Target
+h = Hole
+L = OpenedHole
+t = TempHole
+
+=======
+SOUNDS
+=======
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Target
+Hole
+TempHole
+OpenedHole
+Player, Wall, Crate
+
+======
+RULES
+======
+
+[ < Player | Crate ] -> [ < Player | < Crate ]
+[ Player Hole ] -> [ Player TempHole ]
+[ > Player | OpenedHole ] -> [ Player | OpenedHole ]
+
+late [ Player | TempHole ] -> [ Player | OpenedHole ]
+
+==============
+WINCONDITIONS
+==============
+
+all Target on Crate
+
+=======
+LEVELS
+=======
+
+MESSAGE Level 1: Over there
+
+#########
+#.*.#...#
+#...#.o.#
+#.p.#...#
+#.......#
+#.......#
+#########
+
+MESSAGE Level 2: Two for two
+
+#########
+#.......#
+#...@o..#
+#....#..#
+#.p..#..#
+#.....*.#
+#########
+
+MESSAGE Level 3: Warehouse
+
+########
+#p#....#
+#.#.oo.#
+#.#..o.#
+#.#.o..#
+#.##.###
+#.*.*..#
+#..*.*.#
+#......#
+########
+
+MESSAGE Level 4: Preparation
+
+#########
+#p......#
+#...#*..#
+#.*ooo..#
+#...#.*.#
+#.......#
+#########
+
+MESSAGE Level 5: Careful
+
+########
+#.....p#
+#..o...#
+##.h...#
+#*hhho.#
+#..*#..#
+########
+
+MESSAGE Level 6: Corridors
+
+#########
+#p......#
+#.##h##.#
+#.#*..#.#
+#.o.#.o.#
+#.#..*#.#
+#.##h##.#
+#.......#
+#########
+
+MESSAGE Level 7: Claustrophobic
+
+######
+#.*.*#
+#.ho.#
+#.hho#
+#p...#
+######
+
+MESSAGE Level 8: Fragil
+
+########
+#..*...#
+#.oho..#
+#*hhh*.#
+#.oho..#
+#..*...#
+#.....p#
+########
+
+MESSAGE Thank you for playing!
+
